@@ -4,6 +4,14 @@
 -- maybe later on it can be one say & one emote + one say and etc.
 
 -- Define jokes (modify this list if needed)
+-- If you want to add joke, please follow these format
+-- Two lines joke: {"first part of the joke",  "second part of the joke"}
+-- for longer joke, you need to provide 4 pairs of strings, the first being the content and the second being how you want it to be sent, like "SAY", "EMOTE" or "YELL"
+-- the first two pairs will happen when the eating starts 
+-- the second two pairs will happen after you gain the food buff
+-- example:
+-- Longer joke: {"the joke", "SAY", "the joke", "EMOTE", "the joke", "SAY", "the joke", "YELL"}
+
 local jokes = {
     {"Why don’t eggs tell jokes?", "Because they might crack up."},
     {"Why don’t skeletons fight each other?", "They don’t have the guts."},
@@ -34,9 +42,11 @@ end
 
 -- Cycle to the next joke for the next trigger
 wa_global.jokeIndex = wa_global.jokeIndex % #jokes + 1
+
 -- Delay for the second part of the joke
 C_Timer.After(10.5, function()
         if AuraUtil.FindAuraByName("Well Fed", "player") then
+            -- print("Well Fed Found")
             if longJoke == 1 and joke[5] and joke[6] then
                 SendChatMessage(joke[5], joke[6])
                 
