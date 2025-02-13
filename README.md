@@ -11,3 +11,16 @@ game is the Nam Nam (https://wago.io/rJLsKGVt-), which triggers a saying at the 
 - You can customize how the joke is tell with "SAY", "EMOTE", "YELL"
 - Provide a light hearted or dark environment for you friends!
 - Uses of C_Timer.After to make sure to the message isn't spammed
+
+## How to Use
+If you make it here, I am assuming you play WoW and have weakaura already and have the nam nam weakaura. all you have to do is, open WeakAura with
+```
+/wa
+```
+select eating nam nam 
+Click the Action tab
+Unclick Chat Message in "On Show" & "On Hide"
+within "On Show"
+click Custom then in the box below copy & paste the lua code in 
+click done
+then you are the next stand up comedian in Azeroth!
