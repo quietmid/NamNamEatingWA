@@ -21,6 +21,6 @@ select eating nam nam
 Click the Action tab
 Unclick Chat Message in "On Show" & "On Hide"
 within "On Show"
-click Custom then in the box below copy & paste the lua code in 
+click Custom then in the box below copy & paste the lua code from main.lua 
 click done
 then you are the next stand up comedian in Azeroth!
