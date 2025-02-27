@@ -29,7 +29,7 @@ if not wa_global.jokeIndex then
     -- Random the first joke
     math.randomseed(GetTime())
     wa_global.jokeIndex = math.random(1, #jokes)
-
+end
 -- Get the next joke & determine if the joke is a short joke or long joke
 local joke = jokes[wa_global.jokeIndex]
 local jokeLength = #joke
