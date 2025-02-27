@@ -13,9 +13,9 @@
 -- Longer joke: {"the joke", "SAY", "the joke", "EMOTE", "the joke", "SAY", "the joke", "YELL"}
 
 local jokes = {
-    {"Why don’t eggs tell jokes?", "Because they might crack up."},
     {"Why don’t skeletons fight each other?", "They don’t have the guts."},
     {"Why did the scarecrow win an award?", "Because he was outstanding in his field!"},
+    {"I was so excited to work this morning that last night I slept like a baby", "I woke up every 2 hours and cried"},
     {"Why don’t some fish play piano?", "Because they can’t find their scales!"},
     {"Why did the bicycle fall over?", "Because it was two-tired!"},
     {"What is the leading cause of dry skin?", "Towel"},
@@ -24,7 +24,11 @@ local jokes = {
 
 -- Save last joke index (use WeakAura's internal storage)
 if not wa_global then wa_global = {} end
-if not wa_global.jokeIndex then wa_global.jokeIndex = 1 end
+-- if not wa_global.jokeIndex then wa_global.jokeIndex = 1 end
+if not wa_global.jokeIndex then
+    -- Random the first joke
+    math.randomseed(GetTime())
+    wa_global.jokeIndex = math.random(1, #jokes)
 
 -- Get the next joke & determine if the joke is a short joke or long joke
 local joke = jokes[wa_global.jokeIndex]
